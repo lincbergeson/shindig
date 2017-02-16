@@ -26,6 +26,11 @@ if (!isset($_SESSION["email"])) {
   }
 } ?>
 <p>you are logged in as user <?php echo $_SESSION["email"]; ?></p>
+<?php if (is_active_user($_SESSION["email"]) !== "success"): ?>
+<p>you need to activate your account. please check your email.</p>
+<?php else: ?>
+<p>your account is active!</p>
+<?php endif; ?>
 <p><a href="logout.php">log out</a></p>
 </body>
 </html>
