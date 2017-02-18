@@ -41,5 +41,11 @@ else {
   $message = "no email or hash provided.";
 }
 ?>
+<html>
+<head>
+<meta http-equiv="refresh" content="3;url=/" />
+<title>Shindig -- Account Verification</title>
+</head>
 
 <p><?php echo $message; ?></p>
+<p>Redirecting you to <a href="/">the homepage...</a></p>

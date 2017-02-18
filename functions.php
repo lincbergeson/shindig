@@ -118,13 +118,13 @@ you have signed up for a shindig account! congrats!
 you can log in with your email address and the password you set at registration, but you need to click the following link to activate your account. (if you don't activate it, you can't really do anything. we do this to prevent robots from creating accounts. robots are not invited to the shindig.)
 
 so yeah, click here:
-localhost:8888/verify.php?email=$email&hash=$activation_hash
+<a href="http://shindig.x10.bz/verify.php?email=$email&hash=$activation_hash">http://shindig.x10.bz/verify.php?email=$email&hash=$activation_hash</a>
 
 should be good to go after that!
 MSG;
   $headers  = 'MIME-Version: 1.0' . "\r\n";
   $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-  $headers .= "From: noreply@localhost.com <noreply@localhost.com>\r\n";
+  $headers .= "From: noreply@shindig.x10.bz <noreply@shindig.x10.bz>\r\n";
   mail($to, $subject, $message, $headers);
 }
 ?>
