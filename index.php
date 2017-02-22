@@ -20,8 +20,7 @@ if (!isset($_SESSION["email"])) {
   if ($message === "success") {
     $_SESSION["email"] = $_POST["email"];
   } else {
-    unset($_SESSION["email"]);
-    print_login_form($message);
+    include('login_form.php');
     die();
   }
 } ?>

@@ -51,20 +51,6 @@ function login($email, $password) {
   return $message;
 }
 
-function print_login_form($message) { ?>
-  <h1>welcome to the shindig</h1>
-  <p><?php echo $message; ?></p>
-  <form action="index.php" method="post">
-    <p>Email address:</p>
-    <input type="text" name="email" />
-    <p>Password:</p>
-    <input type="password" name="password" />
-    <br /><br />
-    <input type="submit" value="Log In" />
-  </form>
-  <p>Not a member? <a href="register.php">Sign up today!</a></p>
-<?php } 
-
 function user_exists($email) {
   global $dbh;
   $exists = false;
