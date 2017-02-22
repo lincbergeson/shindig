@@ -113,18 +113,20 @@ function send_verification_email($email, $activation_hash) {
   $to = $email;
   $subject = 'verify your shindig account';
   $message = <<<MSG
-you have signed up for a shindig account! congrats!
+you have signed up for a shindig account! congrats!<br /><br />
 
-you can log in with your email address and the password you set at registration, but you need to click the following link to activate your account. (if you don't activate it, you can't really do anything. we do this to prevent robots from creating accounts. robots are not invited to the shindig.)
+you can log in with your email address and the password you set at registration, but you need to click the following link to activate your account. (if you don't activate it, you can't really do anything. we do this to prevent robots from creating accounts. robots are not invited to the shindig.)<br /><br />
 
-so yeah, click here:
-<a href="http://shindig.x10.bz/verify.php?email=$email&hash=$activation_hash">http://shindig.x10.bz/verify.php?email=$email&hash=$activation_hash</a>
+so yeah, click here:<br />
+<a href="http://shindig.x10.bz/verify.php?email=$email&hash=$activation_hash">http://shindig.x10.bz/verify.php?email=$email&hash=$activation_hash</a><br /><br />
 
-should be good to go after that!
+should be good to go after that!<br /><br />
+
+-- your friends at the shindig
 MSG;
-  $headers  = 'MIME-Version: 1.0' . "\r\n";
-  $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-  $headers .= "From: noreply@shindig.x10.bz <noreply@shindig.x10.bz>\r\n";
+  $headers  = 'MIME-Version: 1.0' . "\r\n"
+            . "Content-type: text/html; charset=iso-8859-1\r\n"
+            . "From: shindig <noreply@shindig.x10.bz>\r\n";
   mail($to, $subject, $message, $headers);
 }
 ?>
