@@ -1,6 +1,6 @@
 <?php 
 require_once('db_init.php'); 
-require_once('functions.php');
+require_once('login_functions.php');
 session_start();
 session_regenerate_id();
 ?>
